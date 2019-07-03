@@ -1,0 +1,42 @@
+
+/*全體字形*/
+*{
+    font-family: Lato,PingFang SC,Microsoft YaHei,Helvetica Neue,Roboto,Heiti TC,-apple-system,BlinkMacSystemFont,Ubuntu,Cantarell,微軟正黑體,sans-serif
+}
+
+
+
+/*問題清單*/
+.list{
+    margin-top:3% 
+}
+.table.table-bordered th{
+    font-size: 16px;
+    background-color: lightblue;
+    text-align: center;
+}
+
+.table.table-bordered tbody tr:nth-child(odd){
+    /* background-color:lightskyblue ; */
+    text-align: center;
+}
+.table.table-bordered tbody td:hover{
+    background-color: lightcyan;
+}
+
+
+.table.table-bordered tbody td + td {
+    text-align: left
+}
+/*解答內容*/
+.detail{
+    background-color: lightblue;
+    text-align: center;
+    width: 100%;
+    height: 38px;
+    font-size: 18px;
+    padding:5px
+}
+.detailContent {
+    font-size:16px; 
+}
