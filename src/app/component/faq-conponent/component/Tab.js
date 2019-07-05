@@ -4,14 +4,15 @@ class Tab extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            menuIndex: [true, false, false, false, false],
-            datas: {},
-            dataList: [],
-            answer: '',
-            menus: ['行動投保', 'eDDA', '速報', '建議書', '其它'],
-        }
-        this.getAnswer = this.getAnswer.bind(this);
+        this.state = store.getStatus();
+        // this.state = {
+        //     menuIndex: [true, false, false, false, false],
+        //     datas: {},
+        //     dataList: [],
+        //     answer: '',
+        //     menus: ['行動投保', 'eDDA', '速報', '建議書', '其它'],
+        // }
+        this.showAnswer = this.showAnswer.bind(this);
         this.getListData = this.getListData.bind(this);
     }
 
@@ -34,11 +35,11 @@ class Tab extends React.Component {
     }
 
 
-    getAnswer(answer) {
+    showAnswer(answer) {
         this.setState({ answer });
     }
 
-    /*取題目答案 */
+
     getListData() {
         fetch('./component/data/faq.json').then(res => res.json()).
             then(data => {
@@ -64,7 +65,7 @@ class Tab extends React.Component {
                 </div>
                 <div className="section_cont container">
                     <div className="row list">
-                        <List dataList={dataList} getAnswer={this.getAnswer} />
+                        <List dataList={dataList} getAnswer={this.showAnswer} />
                         <Content answer={this.state.answer} />
                     </div>
                 </div>
@@ -72,6 +73,14 @@ class Tab extends React.Component {
         )
     }
 }
+
+
+
+
+
+
+
+
 
 
 

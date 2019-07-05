@@ -1,4 +1,6 @@
 
+console.log(store);
+
 
 class App extends React.Component {
 
