@@ -1,6 +1,6 @@
 
 
-const menuIndex = (state = [], action) => {
+const faq_menuIndex = (state = [], action) => {
     switch (action.type) {
         case 'CHANGE_MENU_INDEX':
             return state.map((menu, index) =>
@@ -9,33 +9,31 @@ const menuIndex = (state = [], action) => {
         default: return state
     }
 }
-
-const datas = (state = {}, action) => {
+const faq_datas = (state = {}, action) => {
     switch (action.type) {
         case 'ADD_DATAS':
             return {
-                datas: Object.assign({}, state, {
+                faq_datas: Object.assign({}, state, {
                     [action.name]: action.value
                 })
             }
+        case 'SET_DATAS':
+            return action.datas
+            
         default: return state
     }
 }
-
-const dataList = (state = [], action) => {
+const faq_dataList = (state = [], action) => {
     switch (action.type) {
 
         case 'GET_DATA_LIST':
-            return {
-                dataList: state.datas[`NO${action.index + 1}`]
-            }
+            return action.datas[`NO${action.index}`]
 
         default: return state
     }
 
 }
-
-const answer = (state = '', action) => {
+const faq_answer = (state = '', action) => {
     switch (action.type) {
         case 'SET_ANSWER':
             return action.answer
@@ -43,12 +41,14 @@ const answer = (state = '', action) => {
     }
 }
 
-const menus = (state = [], action) => {
+const faq_menus = (state = [], action) => {
     switch (action.type) {
         case 'ADD_MENUS':
             return [...state, action.menus]
-              
-      
+
+
         default: return state
     }
 }
+
+

@@ -25,7 +25,7 @@ class List extends React.Component {
                         <tbody>{
                             dataList.map((item, i) => (
                                 <tr key={i}>
-                                    <td>{`Q${i}`}</td>
+                                    <td>{`Q${i+1}`}</td>
                                     <td><a onClick={()=>getAnswer(item.answer)}>{item.question}</a></td>
                                 </tr>
                             ))

@@ -4,6 +4,7 @@ const SET_ANSWER = 'SET_ANSWER';
 const GET_DATA_LIST = 'GET_DATA_LIST';
 const ADD_DATAS = 'ADD_DATAS';
 const ADD_MENUS = 'ADD_MENUS';
+const SET_DATAS = 'SET_DATAS';
 
 
 const switchIndex = _index => {
@@ -33,18 +34,26 @@ const getDatas = () => {
     }
 }
 
-const getDataList = (_index) => {
+const getDataList = (_index, datas) => {
     return {
         type: GET_DATA_LIST,
-        index: _index
+        index: _index,
+        datas: datas
     }
 }
 
-const addData = (newType={})=>{
-    return{
-        type:ADD_DATAS,
-        name:newType.name,
-        value:newType.value
+const addData = (newType = {}) => {
+    return {
+        type: ADD_DATAS,
+        name: newType.name,
+        value: newType.value
+    }
+}
+
+const setData = (initData = {}) => {
+    return {
+        type: 'SET_DATAS',
+        datas: initData
     }
 }
 
