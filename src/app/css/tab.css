@@ -4,6 +4,35 @@
     font-family: Lato,PingFang SC,Microsoft YaHei,Helvetica Neue,Roboto,Heiti TC,-apple-system,BlinkMacSystemFont,Ubuntu,Cantarell,微軟正黑體,sans-serif
 }
 
+/*tap style*/
+.navtab ul li {
+    list-style: none;
+    padding-top: 20px;
+    padding-left: 20px;
+    float: left;
+}
+
+.navtab ul li a {
+    font-family: "Microsoft MSJH";
+    z-index: 99;
+    line-height: 36px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.trapezoid {
+    width: 150px;
+    height: 50px;
+    border-bottom: 35px solid #e3e2e3;
+    -webkit-border-top-left-radius: 50%;
+    border-right: 35px solid transparent;
+    font-size:larger;
+}
+
+.trapezoid.active{
+    border-bottom: 35px solid #3593d3;
+    color: #FFF;
+}
 
 
 /*問題清單*/
@@ -17,13 +46,12 @@
 }
 
 .table.table-bordered tbody tr:nth-child(odd){
-    /* background-color:lightskyblue ; */
     text-align: center;
 }
+
 .table.table-bordered tbody td:hover{
     background-color: lightcyan;
 }
-
 
 .table.table-bordered tbody td + td {
     text-align: left

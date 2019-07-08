@@ -39,7 +39,7 @@ class Tab extends React.Component {
     /**切頁簽 */
     tabSwitch = (i) => {
         const index = i + 1;
-        store.dispatch(switchIndex(index));
+        store.dispatch(switchIndex(i));
         store.dispatch(getDataList(index, store.getState().faq_datas));
         console.log(store.getState());
     }
@@ -60,13 +60,13 @@ class Tab extends React.Component {
 
 
     render() {
-        const { faq_menus, faq_dataList, faq_answer } = store.getState();
+        const { faq_menus, faq_dataList, faq_answer,faq_menuIndex} = store.getState();
 
         return (
             <div className='main'>
                 <div className="navtab" >
                     <ul>
-                        {faq_menus.map((item, i) => (<li key={i} className='trapezoid' onClick={this.tabSwitch.bind(this, i)}>{item}</li>))}
+                        {faq_menus.map((item, i) => (<li key={i} className={(faq_menuIndex[i])?'trapezoid active':'trapezoid'} onClick={this.tabSwitch.bind(this, i)}><a>{item}</a></li>))}
                     </ul>
                 </div>
                 <div className="section_cont container">
